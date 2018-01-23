@@ -21,15 +21,12 @@ public class ReadFromFileTest {
             File file = new File(FILE);
             File defaultFile = new File(DEFAULT_FILE);
 
-            List<String> expectedReadStringsList = Arrays.asList("1.0 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0",
-                    "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0", "1.0  1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0");
-
-            List<String> readStringsList;
+            int expectedStringsCount = 3;
 
             ReadFromFile readFromFile = new ReadFromFile();
-            readStringsList = readFromFile.readData(file, defaultFile);
+            int stringsCount = readFromFile.readData(file, defaultFile).size();
 
-            Assert.assertEquals(readStringsList, expectedReadStringsList);
+            Assert.assertEquals(stringsCount, expectedStringsCount);
         } catch (IncorrectInputFileException e) {
             Assert.fail("Unexpected fail!", e);
         }
