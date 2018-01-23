@@ -6,29 +6,28 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
 
 public class ReadFromFileTest {
 
     @Test
     public void readFromFileTest() {
 
+        final String DEFAULT_FILE = "data/defaultData.txt";
+        final String FILE = "data/data.txt";
+
+        File file = new File(FILE);
+        File defaultFile = new File(DEFAULT_FILE);
+
+        int expectedStringsCount = 3;
+        int stringsCount = 0;
+
+        ReadFromFile readFromFile = new ReadFromFile();
+
         try {
-            final String DEFAULT_FILE = "data/defaultData.txt";
-            final String FILE = "data/data.txt";
-
-            File file = new File(FILE);
-            File defaultFile = new File(DEFAULT_FILE);
-
-            int expectedStringsCount = 3;
-
-            ReadFromFile readFromFile = new ReadFromFile();
-            int stringsCount = readFromFile.readData(file, defaultFile).size();
-
-            Assert.assertEquals(stringsCount, expectedStringsCount);
+            stringsCount = readFromFile.readData(file, defaultFile).size();
         } catch (IncorrectInputFileException e) {
-            Assert.fail("Unexpected fail!", e);
+            Assert.fail("Unexpected fail!");
         }
+        Assert.assertEquals(stringsCount, expectedStringsCount);
     }
 }

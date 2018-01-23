@@ -3,6 +3,7 @@ package test.by.pivovarevich.task1.action;
 import by.pivovarevich.task1.action.PerpendicularPlaneToTheCoordinateAxis;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
+import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,8 +21,11 @@ public class PerpendicularPlaneToTheCoordinateAxisNegativeTest {
         EntityPlane plane = new EntityPlane(point1, point2, point3);
 
         PerpendicularPlaneToTheCoordinateAxis perpendicularPlaneToTheCoordinateAxis = new PerpendicularPlaneToTheCoordinateAxis();
-        isPerpendicular = perpendicularPlaneToTheCoordinateAxis.isPlanePerpendicularToCoordinateAxisOx(plane);
-
-        Assert.assertEquals(isPerpendicular, false);
+        try {
+            isPerpendicular = perpendicularPlaneToTheCoordinateAxis.isPlanePerpendicularToCoordinateAxisOx(plane);
+            Assert.assertEquals(isPerpendicular, false);
+        } catch (IncorrectInputParametersException e) {
+            Assert.fail("Unexpected fail!");
+        }
     }
 }

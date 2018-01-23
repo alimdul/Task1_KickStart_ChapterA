@@ -2,13 +2,14 @@ package test.by.pivovarevich.task1.action;
 
 import by.pivovarevich.task1.action.CheckForWhetherPointsFormPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
+import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CheckForWhetherPointsFormPlaneNegativeTest {
+public class CheckForWhetherPointsFormPlaneNegativePointsOnLineTest {
 
     @Test
-    public void checkForWhetherPointsFormPlaneNegativeTest() {
+    public void checkForWhetherPointsFormPlaneNegativePointsOnLineTest() {
 
         boolean pointsFormPlane;
 
@@ -17,8 +18,11 @@ public class CheckForWhetherPointsFormPlaneNegativeTest {
         EntityPoint point3 = new EntityPoint(27.0, -40.0, 29.0);
 
         CheckForWhetherPointsFormPlane checkForWhetherPointsFormPlane = new CheckForWhetherPointsFormPlane();
-        pointsFormPlane = checkForWhetherPointsFormPlane.pointsFormPlane(point1, point2, point3);
-
-        Assert.assertEquals(pointsFormPlane, false);
+        try {
+            pointsFormPlane = checkForWhetherPointsFormPlane.pointsFormPlane(point1, point2, point3);
+            Assert.assertEquals(pointsFormPlane, false);
+        } catch (IncorrectInputParametersException e) {
+            Assert.fail("Unexpected fail!");
+        }
     }
 }

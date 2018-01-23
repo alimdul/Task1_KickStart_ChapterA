@@ -21,16 +21,16 @@ public class ReadFromFile {
 
     public List<String> readData(File file, File defaultFile) throws IncorrectInputFileException {
 
-        if(file.exists() && file.length() != 0) {
-            try {
-                Files.lines(Paths.get(file.getPath()), StandardCharsets.UTF_8).forEach((String currentString) -> {
-                    readStringsList.add(currentString);
-                });
-            } catch (IOException e) {
-                throw new IncorrectInputFileException("- Problems with reading file " + file.getPath(), e);
-            }
+        if((file == null || !file.exists()) && (defaultFile == null || !defaultFile.exists())) {
+            throw new IncorrectInputFileException("Incorrect input parameters");
         }
-        else {
+
+        try {
+            Files.lines(Paths.get(file.getPath()), StandardCharsets.UTF_8).forEach((String currentString) -> {
+                readStringsList.add(currentString);
+            });
+        } catch (IOException e) {
+            LOGGER.log(Level.ERROR, "- Problems with reading file " + file.getPath());
             defaultRead(defaultFile);
         }
         LOGGER.log(Level.INFO, "- Data is successfully read. List contains " + readStringsList.size() + " strings");
@@ -39,18 +39,13 @@ public class ReadFromFile {
 
     public void defaultRead(File defaultFile) {
 
-        if (defaultFile.exists() && defaultFile.length() != 0) {
-            try {
-                Files.lines(Paths.get(defaultFile.getPath()), StandardCharsets.UTF_8).forEach((String currentString) -> {
-                    readStringsList.add(currentString);
-                });
-            } catch (IOException e) {
-                LOGGER.log(Level.FATAL, "- Fatal error! File not found.");
-                throw new RuntimeException();
-            }
-        } else {
+        try {
+            Files.lines(Paths.get(defaultFile.getPath()), StandardCharsets.UTF_8).forEach((String currentString) -> {
+                readStringsList.add(currentString);
+            });
+        } catch (IOException e) {
             LOGGER.log(Level.FATAL, "- Fatal error! File not found.");
-            throw new RuntimeException();
+            throw new RuntimeException(e);
         }
     }
 }

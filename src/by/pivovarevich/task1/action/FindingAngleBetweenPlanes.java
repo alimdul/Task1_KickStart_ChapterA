@@ -1,6 +1,7 @@
 package by.pivovarevich.task1.action;
 
 import by.pivovarevich.task1.entity.EntityPlane;
+import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +16,15 @@ public class FindingAngleBetweenPlanes {
     private double coefficientB_1;
     private double coefficientC_1;
 
+    private CheckForWhetherPointsFormPlane checkForWhetherPointsFormPlane = new CheckForWhetherPointsFormPlane();
     private List<Double> coefficientList = new ArrayList<>();
     private double cosAngle;
 
-    public List<Double> findingCoefficients(EntityPlane plane) {
+    public List<Double> findingCoefficients(EntityPlane plane) throws IncorrectInputParametersException {
+
+        if (plane == null || (!checkForWhetherPointsFormPlane.pointsFormPlane(plane.getPoint1(), plane.getPoint2(), plane.getPoint3()))){
+            throw new IncorrectInputParametersException("Incorrect input parameters! These points do not form a plane");
+        }
 
         coefficientA_1 = ((plane.getPoint2().getY() - plane.getPoint1().getY()) *
                 (plane.getPoint3().getZ() - plane.getPoint1().getZ())) -
@@ -50,7 +56,11 @@ public class FindingAngleBetweenPlanes {
         return coefficientList;
     }
 
-    public double findingAngleBetweenPlaneAndCoordinatePlaneYOZ(EntityPlane plane) {
+    public double findingAngleBetweenPlaneAndCoordinatePlaneYOZ(EntityPlane plane) throws IncorrectInputParametersException {
+
+        if (plane == null || (!checkForWhetherPointsFormPlane.pointsFormPlane(plane.getPoint1(), plane.getPoint2(), plane.getPoint3()))){
+            throw new IncorrectInputParametersException("Incorrect input parameters! These points do not form a plane");
+        }
 
         findingCoefficients(plane);
 

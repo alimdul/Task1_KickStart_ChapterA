@@ -1,5 +1,7 @@
 package by.pivovarevich.task1.parser;
 
+import by.pivovarevich.task1.exception.IncorrectInputParametersException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -11,7 +13,11 @@ public class DataParser {
 
     private List<Double> coordinatesString = new ArrayList<>();
 
-    public List<Double> parseString (String string) {
+    public List<Double> parseString (String string) throws IncorrectInputParametersException {
+
+        if (string == null) {
+            throw new IncorrectInputParametersException("Incorrect input parameters");
+        }
 
         Pattern p = Pattern.compile(DOUBLE_NUMBER);
         Matcher m = p.matcher(string);

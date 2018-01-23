@@ -1,5 +1,6 @@
 package test.by.pivovarevich.task1.parser;
 
+import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import by.pivovarevich.task1.parser.DataParser;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,8 +19,11 @@ public class DataParserTest {
         String string = "1.0 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0";
 
         DataParser dataParser = new DataParser();
-        coordinatesString = dataParser.parseString(string);
-
-        Assert.assertEquals(coordinatesString, expectedCoordinatesString);
+        try {
+            coordinatesString = dataParser.parseString(string);
+            Assert.assertEquals(coordinatesString, expectedCoordinatesString);
+        } catch (IncorrectInputParametersException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -15,12 +15,13 @@ public class ValidationOnData {
 
         Pattern p = Pattern.compile(NINE_DOUBLE_NUMBERS);
         Matcher m = p.matcher(string);
-        if (!m.matches()) {
-            LOGGER.log(Level.ERROR, "- String \"" + string + "\" is not valid");
-            return false;
+
+        if(m.matches()) {
+            return true;
         }
         else {
-            return true;
+            LOGGER.log(Level.ERROR, "- String \"" + string + "\" is not valid");
+            return false;
         }
     }
 }
