@@ -1,0 +1,63 @@
+
+2018-01-20 20:01:32 [main] DEBUG by.pivovarevich.task1.action.ReadFromFileTest - File data\dat.txt not found!
+2018-01-20 20:02:00 [main] DEBUG by.pivovarevich.task1.action.ReadFromFileTest - File data\dat.txt not found!
+
+2018-01-20 20:02:15 [main] DEBUG by.pivovarevich.task1.action.ReadFromFileTest - File data\dat.txt not found!
+
+2018-01-20 23:12:25 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! No file found.
+2018-01-20 23:13:06 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-21 20:30:16 [main] DEBUG by.pivovarevich.task1.validation.ValidationOnData - String 1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0is not valid
+2018-01-22 01:08:57 [main] WARN  by.pivovarevich.task1.validation.ValidationOnData - String 1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0 is not valid
+2018-01-22 01:09:46 [main] WARN  by.pivovarevich.task1.validation.ValidationOnData - String <<1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0>> is not valid
+2018-01-22 01:10:17 [main] WARN  by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-22 01:11:05 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:12:03 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:12:23 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:13:17 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:13:32 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:13:43 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:13:57 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:14:37 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:15:00 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:15:09 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-22 01:18:53 [main] WARN  by.pivovarevich.task1.validation.ValidationOnData - String "t" is not valid
+2018-01-22 01:19:04 [main] FATAL by.pivovarevich.task1.reader.DataRead - Fatal error! File not found.
+2018-01-23 02:20:56 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:22:48 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 3 valid lines
+2018-01-23 02:24:49 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 3 valid lines
+2018-01-23 02:24:59 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:33:50 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:38:44 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:39:38 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:40:07 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:40:19 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:40:38 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:41:16 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:42:27 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:43:14 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 3 valid lines
+2018-01-23 02:43:23 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:43:38 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:43:45 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:44:07 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 3 valid lines
+2018-01-23 02:44:48 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:45:03 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:48:36 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List validStringsList contains 1 valid lines
+2018-01-23 02:50:22 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 2 valid lines
+2018-01-23 02:51:30 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 2 valid lines
+2018-01-23 02:56:24 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-23 02:57:33 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-23 02:57:48 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-23 03:00:02 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 3 valid lines
+2018-01-23 03:00:34 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 3 valid lines
+2018-01-23 03:01:12 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 3 valid lines
+2018-01-23 03:03:24 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 3 valid lines
+2018-01-23 03:03:40 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 1 valid lines
+2018-01-23 03:03:49 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-23 03:04:56 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-23 03:05:43 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-23 03:24:02 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1. 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-23 13:05:23 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 3 valid lines
+2018-01-23 13:12:30 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - List contains 3 valid lines
+2018-01-23 13:16:52 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-23 13:18:16 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
+2018-01-23 14:26:39 [main] FATAL by.pivovarevich.task1.reader.ReadFromFile - Fatal error! File not found.
