@@ -75,3 +75,146 @@
 2018-01-23 18:06:54 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
 2018-01-23 18:09:32 [main] ERROR by.pivovarevich.task1.reader.ReadFromFile - Problems with reading file data\wrongFile.txt
 2018-01-23 18:09:33 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 1 strings
+2018-01-29 23:43:40 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-29 23:43:51 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-29 23:46:46 [main] ERROR by.pivovarevich.task1.reader.ReadFromFile - Problems with reading file data\wrongFile.txt
+2018-01-29 23:46:46 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 1 strings
+2018-01-30 00:06:05 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 1 strings
+2018-01-30 00:08:38 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1. 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 00:29:56 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1. 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 00:58:44 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 00:58:44 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 00:58:44 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 00:58:44 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:00:12 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:00:12 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:00:12 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:00:12 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:03:55 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:03:55 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:05:07 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:05:07 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:05:25 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 2 strings
+2018-01-30 01:05:25 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:05:34 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:05:34 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:06:01 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:06:01 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:06:01 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:06:27 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 4 strings
+2018-01-30 01:06:27 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:06:41 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:06:41 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:08:00 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:08:00 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:08:16 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:08:16 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:08:16 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:08:16 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:11:34 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:11:34 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:11:34 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:11:34 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:15:04 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:15:04 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:15:04 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:15:39 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:15:39 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:15:39 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:15:39 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:16:18 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 1 strings
+2018-01-30 01:16:33 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 1 strings
+2018-01-30 01:19:29 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 1 strings
+2018-01-30 01:19:50 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 2 strings
+2018-01-30 01:20:35 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 2 strings
+2018-01-30 01:21:05 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 2 strings
+2018-01-30 01:21:20 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 2 strings
+2018-01-30 01:21:35 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:21:35 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:21:35 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:25:47 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:25:47 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:25:47 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:26:09 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:26:09 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:26:09 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:28:08 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:28:08 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:28:56 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:28:56 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:28:56 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:30:36 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:30:36 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:30:36 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:30:36 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 01:31:16 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:31:16 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:31:54 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:31:54 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:32:07 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:32:07 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:33:34 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:38:39 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:41:59 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:41:59 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:42:14 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:42:14 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:43:01 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:43:01 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:43:10 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:43:10 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:43:47 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:53:57 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:57:41 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:57:41 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:58:01 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 01:58:01 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 01:58:13 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:02:14 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:04:11 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:04:11 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:04:11 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:04:48 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 4 strings
+2018-01-30 02:04:48 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:04:48 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:04:57 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:04:57 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:04:57 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:05:05 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:05:05 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:05:05 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:05:05 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "" is not valid
+2018-01-30 02:05:17 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 2 strings
+2018-01-30 02:05:17 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:05:17 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:05:27 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:05:27 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:05:27 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:05:27 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "" is not valid
+2018-01-30 02:05:33 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:05:33 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:05:33 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:06:20 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:06:20 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:06:20 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:08:19 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:08:19 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points do not form a plane.
+2018-01-30 02:08:19 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:10:41 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:10:41 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points: (x=1.0, y=1.0, z=1.0)(x=2.0, y=2.0, z=2.0)(x=3.0, y=3.0, z=3.0)do not form a plane.
+2018-01-30 02:10:41 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:11:53 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 4 strings
+2018-01-30 02:11:53 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points: (x=1.0, y=1.0, z=1.0)(x=2.0, y=2.0, z=2.0)(x=3.0, y=3.0, z=3.0) do not form a plane.
+2018-01-30 02:11:53 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:12:03 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 5 strings
+2018-01-30 02:12:03 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points: (x=1.0, y=1.0, z=1.0)(x=2.0, y=2.0, z=2.0)(x=3.0, y=3.0, z=3.0) do not form a plane.
+2018-01-30 02:12:03 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points: (x=1.0, y=1.0, z=1.0)(x=2.0, y=2.0, z=2.0)(x=3.0, y=3.0, z=3.0) do not form a plane.
+2018-01-30 02:12:03 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:12:34 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 2 strings
+2018-01-30 02:12:34 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points: (x=1.0, y=1.0, z=1.0)(x=2.0, y=2.0, z=2.0)(x=3.0, y=3.0, z=3.0) do not form a plane.
+2018-01-30 02:12:34 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:12:41 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 3 strings
+2018-01-30 02:12:41 [main] WARN  by.pivovarevich.task1.creator.PlaneCreator - These points: (x=1.0, y=1.0, z=1.0)(x=2.0, y=2.0, z=2.0)(x=3.0, y=3.0, z=3.0) do not form a plane.
+2018-01-30 02:12:41 [main] ERROR by.pivovarevich.task1.validation.ValidationOnData - String "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0" is not valid
+2018-01-30 02:18:52 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 0 strings
+2018-01-30 02:19:52 [main] INFO  by.pivovarevich.task1.reader.ReadFromFile - Data is successfully read. List contains 0 strings

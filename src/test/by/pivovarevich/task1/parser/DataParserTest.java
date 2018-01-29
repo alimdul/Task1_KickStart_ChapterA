@@ -11,7 +11,7 @@ import java.util.List;
 public class DataParserTest {
 
     @Test
-    public void dataParserTest() {
+    public void dataParserPositiveTest() {
 
         List<Double> coordinatesString;
         List<Double> expectedCoordinatesString = Arrays.asList(1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 3.0, 3.0, 3.0);
@@ -26,4 +26,14 @@ public class DataParserTest {
             e.printStackTrace();
         }
     }
+
+    @Test(expectedExceptions = IncorrectInputParametersException.class)
+    public void dataParserExceptionTest() throws IncorrectInputParametersException {
+
+        String string = null;
+
+        DataParser dataParser = new DataParser();
+        dataParser.parseString(string);
+    }
+
 }

@@ -19,9 +19,9 @@ public class ReadFromFile {
 
     private List<String> readStringsList = new ArrayList<>();
 
-    public List<String> readData(File file, File defaultFile) throws IncorrectInputFileException {
+    public List<String> readData(File file) throws IncorrectInputFileException {
 
-        if((file == null || !file.exists()) && (defaultFile == null || !defaultFile.exists())) {
+        if(file == null || !file.exists() || file.length()==0) {
             throw new IncorrectInputFileException("Incorrect input parameters");
         }
 
@@ -30,22 +30,10 @@ public class ReadFromFile {
                 readStringsList.add(currentString);
             });
         } catch (IOException e) {
-            LOGGER.log(Level.ERROR, "- Problems with reading file " + file.getPath());
-            defaultRead(defaultFile);
-        }
-        LOGGER.log(Level.INFO, "- Data is successfully read. List contains " + readStringsList.size() + " strings");
-        return readStringsList;
-    }
-
-    public void defaultRead(File defaultFile) {
-
-        try {
-            Files.lines(Paths.get(defaultFile.getPath()), StandardCharsets.UTF_8).forEach((String currentString) -> {
-                readStringsList.add(currentString);
-            });
-        } catch (IOException e) {
             LOGGER.log(Level.FATAL, "- Fatal error! File not found.");
             throw new RuntimeException(e);
         }
+        LOGGER.log(Level.INFO, "- Data is successfully read. List contains " + readStringsList.size() + " strings");
+        return readStringsList;
     }
 }

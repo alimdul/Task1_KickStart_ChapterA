@@ -35,7 +35,7 @@ public class EntityPoint {
     @Override
     public int hashCode() {
         final int prime = 37;
-        int result = 3;
+        int result = 1;
 
         result = result * prime + (int)(Double.doubleToLongBits(x) - (Double.doubleToLongBits(x) >>> 32));
         result = result * prime + (int)(Double.doubleToLongBits(y) - (Double.doubleToLongBits(y) >>> 32));

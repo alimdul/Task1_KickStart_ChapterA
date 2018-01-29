@@ -39,7 +39,7 @@ public class EntityPlane {
     @Override
     public int hashCode() {
         final int prime = 37;
-        int result = 3;
+        int result = 1;
 
         result = result * prime + (point1.hashCode());
         result = result * prime + (point2.hashCode());

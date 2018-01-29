@@ -13,7 +13,7 @@ import java.util.List;
 public class PlaneCreatorTest {
 
     @Test
-    public void validationOnDataNegativeTest() {
+    public void planeCreatorPositiveTest() {
 
         EntityPoint point1 = new EntityPoint(0.0, 1.0, 0.0);
         EntityPoint point2 = new EntityPoint(0.0, 1.0, 3.0);
@@ -30,4 +30,21 @@ public class PlaneCreatorTest {
             Assert.fail("Unexpected fail!");
         }
     }
+
+    @Test(expectedExceptions = IncorrectInputParametersException.class)
+    public void planeCreatorNullParameterExceptionTest() throws IncorrectInputParametersException {
+
+        List<Double> coordinatesList = null;
+        PlaneCreator planeCreator = new PlaneCreator();
+        planeCreator.createPlane(coordinatesList);
+    }
+
+    @Test(expectedExceptions = IncorrectInputParametersException.class)
+    public void planeCreatorWrongCoordinatesCountExceptionTest() throws IncorrectInputParametersException {
+
+        List<Double> coordinatesList = Arrays.asList(1.0, 3.0, 3.0, 1.0, 3.0, 3.0, 3.0);
+        PlaneCreator planeCreator = new PlaneCreator();
+        planeCreator.createPlane(coordinatesList);
+    }
+
 }

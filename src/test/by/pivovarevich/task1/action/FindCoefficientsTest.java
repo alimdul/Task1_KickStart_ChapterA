@@ -1,18 +1,19 @@
 package test.by.pivovarevich.task1.action;
 
-import by.pivovarevich.task1.action.FindingAngleBetweenPlanes;
+import by.pivovarevich.task1.action.FindAngleBetweenPlanes;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
 import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.Arrays;
 import java.util.List;
 
-public class FindingCoefficientsTest {
+public class FindCoefficientsTest {
 
     @Test
-    public void findingCoefficientsTest() {
+    public void findCoefficientsPositiveTest() {
 
         List<Double> coefficientList;
         List<Double> expectedCoefficientList = Arrays.asList(0.0, -5.0, 0.0);
@@ -23,12 +24,22 @@ public class FindingCoefficientsTest {
 
         EntityPlane plane = new EntityPlane(point1, point2, point3);
 
-        FindingAngleBetweenPlanes findingAngleBetweenPlanes = new FindingAngleBetweenPlanes();
+        FindAngleBetweenPlanes findAngleBetweenPlanes = new FindAngleBetweenPlanes();
         try {
-            coefficientList = findingAngleBetweenPlanes.findingCoefficients(plane);
+            coefficientList = findAngleBetweenPlanes.findCoefficients(plane);
             Assert.assertEquals(coefficientList, expectedCoefficientList);
         } catch (IncorrectInputParametersException e) {
             Assert.fail("Unexpected fail!");
         }
     }
+
+    @Test(expectedExceptions = IncorrectInputParametersException.class)
+    public void findCoefficientsNullParameterExceptionTest() throws IncorrectInputParametersException {
+
+        EntityPlane plane = null;
+
+        FindAngleBetweenPlanes findingAngleBetweenPlanes = new FindAngleBetweenPlanes();
+        findingAngleBetweenPlanes.findCoefficients(plane);
+    }
+
 }

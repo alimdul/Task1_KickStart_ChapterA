@@ -1,16 +1,25 @@
 package test.by.pivovarevich.task1.action;
 
-import by.pivovarevich.task1.action.FindingAngleBetweenPlanes;
+import by.pivovarevich.task1.action.FindAngleBetweenPlanes;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
 import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FindingAngleBetweenPlanesTest {
+public class FindAngleBetweenPlanesTest {
+
+    @Test(expectedExceptions = IncorrectInputParametersException.class)
+    public void findAngleBetweenPlanesExceptionTest() throws IncorrectInputParametersException {
+
+        EntityPlane plane = null;
+
+        FindAngleBetweenPlanes findingAngleBetweenPlanes = new FindAngleBetweenPlanes();
+        findingAngleBetweenPlanes.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
+    }
 
     @Test
-    public void findingAngleBetweenPlanesTest() {
+    public void findAngleBetweenPlanesPositiveTest() {
 
         double angle;
 
@@ -20,12 +29,13 @@ public class FindingAngleBetweenPlanesTest {
 
         EntityPlane plane = new EntityPlane(point1, point2, point3);
 
-        FindingAngleBetweenPlanes findingAngleBetweenPlanes = new FindingAngleBetweenPlanes();
+        FindAngleBetweenPlanes findingAngleBetweenPlanes = new FindAngleBetweenPlanes();
         try {
-            angle = findingAngleBetweenPlanes.findingAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
+            angle = findingAngleBetweenPlanes.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
             Assert.assertEquals(angle, 23.0);
         } catch (IncorrectInputParametersException e) {
             Assert.fail("Unexpected fail!");
         }
     }
+
 }
