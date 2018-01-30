@@ -17,7 +17,7 @@ public class ReadFromFile {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private List<String> readStringsList = new ArrayList<>();
+    private List<String> readStringsList;
 
     public List<String> readData(File file) throws IncorrectInputFileException {
 
@@ -25,6 +25,7 @@ public class ReadFromFile {
             throw new IncorrectInputFileException("Incorrect input parameters");
         }
 
+        readStringsList = new ArrayList<>();
         try {
             Files.lines(Paths.get(file.getPath()), StandardCharsets.UTF_8).forEach((String currentString) -> {
                 readStringsList.add(currentString);

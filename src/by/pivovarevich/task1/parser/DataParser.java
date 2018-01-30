@@ -16,8 +16,8 @@ public class DataParser {
 
     public List<Double> parseString (String string) throws IncorrectInputParametersException {
 
-        coordinatesString = new ArrayList<>();
         InputParameterValidation.nullParameter(string);
+        coordinatesString = new ArrayList<>();
 
         Pattern p = Pattern.compile(DOUBLE_NUMBER);
         Matcher m = p.matcher(string);

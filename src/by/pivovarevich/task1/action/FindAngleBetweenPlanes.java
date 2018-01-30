@@ -17,12 +17,13 @@ public class FindAngleBetweenPlanes {
     private double coefficientB1;
     private double coefficientC1;
 
-    private List<Double> coefficientList = new ArrayList<>();
+    private List<Double> coefficientList;
     private double cosAngle;
 
     public List<Double> findCoefficients(EntityPlane plane) throws IncorrectInputParametersException {
 
         InputParameterValidation.nullParameter(plane);
+        coefficientList = new ArrayList<>();
 
         coefficientA1 = ((plane.getPoint2().getY() - plane.getPoint1().getY()) *
                 (plane.getPoint3().getZ() - plane.getPoint1().getZ())) -
