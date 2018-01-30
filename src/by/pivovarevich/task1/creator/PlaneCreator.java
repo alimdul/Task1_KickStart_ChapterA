@@ -1,5 +1,8 @@
 package by.pivovarevich.task1.creator;
 
+import by.pivovarevich.task1.entity.PlaneHolderSingleton;
+import by.pivovarevich.task1.identifierCounter.CountIdentifier;
+import by.pivovarevich.task1.observer.PlaneObserver;
 import by.pivovarevich.task1.validation.CheckForThreePointsFormPlane;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
@@ -25,7 +28,10 @@ public class PlaneCreator {
     private static final int Y3 = 7;
     private static final int Z3 = 8;
 
+    private PlaneHolderSingleton planeHolderSingleton = PlaneHolderSingleton.getPlaneHolderSingleton();
     private CheckForThreePointsFormPlane checkForThreePointsFormPlane = new CheckForThreePointsFormPlane();
+    private EntityPlane newPlane;
+    private PlaneObserver planeObserver;
     private EntityPoint point1;
     private EntityPoint point2;
     private EntityPoint point3;
@@ -39,7 +45,12 @@ public class PlaneCreator {
         point3 = new EntityPoint(coordinatesString.get(X3), coordinatesString.get(Y3), coordinatesString.get(Z3));
 
         if(checkForThreePointsFormPlane.pointsFormPlane(point1, point2, point3)) {
-            return new EntityPlane(point1, point2, point3);
+            newPlane = new EntityPlane(point1, point2, point3);
+            planeObserver = new PlaneObserver(newPlane);
+            newPlane.setId(CountIdentifier.countPlaneIdentifier());
+            newPlane.addObserver(planeObserver);
+            planeHolderSingleton.addPlane(newPlane);
+            return newPlane;
         }
         else {
             LOGGER.log(Level.WARN, "- These points: " + point1.toString() + point2.toString() + point3.toString() +
@@ -47,4 +58,5 @@ public class PlaneCreator {
             return null;
         }
     }
+
 }

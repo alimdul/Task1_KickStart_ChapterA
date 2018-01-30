@@ -1,8 +1,11 @@
 package test.by.pivovarevich.task1.action;
 import by.pivovarevich.task1.creator.PlaneCreator;
 import by.pivovarevich.task1.entity.EntityPlane;
+import by.pivovarevich.task1.entity.EntityPoint;
+import by.pivovarevich.task1.entity.PlaneHolderSingleton;
 import by.pivovarevich.task1.exception.IncorrectInputFileException;
 import by.pivovarevich.task1.exception.IncorrectInputParametersException;
+import by.pivovarevich.task1.identifierCounter.CountIdentifier;
 import by.pivovarevich.task1.parser.DataParser;
 import by.pivovarevich.task1.reader.ReadFromFile;
 import by.pivovarevich.task1.validation.ValidationOnData;
@@ -15,7 +18,7 @@ public class BigTest {
 
     public static void main(String[] args) {
 
-        List<EntityPlane> planeList = new ArrayList<>();
+        PlaneHolderSingleton planeHolderSingleton = PlaneHolderSingleton.getPlaneHolderSingleton();
 
         String fileName = "data/data.txt";
         File file = new File(fileName);
@@ -31,16 +34,17 @@ public class BigTest {
                 currentString = strings.get(i);
                 if(validationOnData.validation(currentString)) {
                     coordinatesList = dataParser.parseString(currentString);
-                    EntityPlane newPlane = planeCreator.createPlane(coordinatesList);
-                    if(newPlane != null) {
-                        planeList.add(newPlane);
-                    }
+                    planeCreator.createPlane(coordinatesList);
                 }
             }
 
-            for(int i=0; i<planeList.size(); i++) {
-                System.out.println(planeList.get(i).toString());
-            }
+            System.out.println("-----------------------------");
+            planeHolderSingleton.printPlaneMap();
+            System.out.println("-----------------------------");
+            System.out.println(planeHolderSingleton.getPlane(2).getPoint2().toString());
+            planeHolderSingleton.getPlane(2).setPoint1(new EntityPoint(9.0, 0.0, 0.0));
+            System.out.println(planeHolderSingleton.getPlane(2).getPoint2().toString());
+            planeHolderSingleton.printPlaneMap();
 
         } catch (IncorrectInputFileException | IncorrectInputParametersException e) {
             System.out.println("Error!");

@@ -17,12 +17,13 @@ public class CheckForPerpendicularityOfPlaneToCoordinateAxis {
     private double coefficientB;
     private double coefficientC;
 
-    private FindAngleBetweenPlanes findAngleBetweenPlanes = new FindAngleBetweenPlanes();
+    private FindAngleBetweenPlanes findAngleBetweenPlanes;
     private List<Double> coefficientList = new ArrayList<>();
 
     public boolean isPlanePerpendicularToCoordinateAxisOx(EntityPlane plane) throws IncorrectInputParametersException {
 
         InputParameterValidation.nullParameter(plane);
+        findAngleBetweenPlanes = new FindAngleBetweenPlanes();
 
         coefficientList = findAngleBetweenPlanes.findCoefficients(plane);
         coefficientA = coefficientList.get(NUMBER_COEFFICIENT_A);

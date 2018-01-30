@@ -1,12 +1,15 @@
 package by.pivovarevich.task1.entity;
 
 import java.util.Objects;
+import java.util.Observable;
 
-public class EntityPlane {
+public class EntityPlane extends Observable {
 
     private EntityPoint point1;
     private EntityPoint point2;
     private EntityPoint point3;
+
+    private long id;
 
     public EntityPlane(EntityPoint point1, EntityPoint point2, EntityPoint point3) {
         this.point1 = point1;
@@ -24,6 +27,32 @@ public class EntityPlane {
 
     public EntityPoint getPoint3() {
         return point3;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setPoint1(EntityPoint point) {
+        point1 = point;
+        setChanged();
+        notifyObservers();
+    }
+
+    public void setPoint2(EntityPoint point) {
+        point2 = point;
+        setChanged();
+        notifyObservers();
+    }
+
+    public void setPoint3(EntityPoint point) {
+        point3 = point;
+        setChanged();
+        notifyObservers();
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Override
