@@ -33,7 +33,7 @@ public class PlaneRepository {
     }
 
     public List<EntityPlane> sort(PlaneSpecificationSortByAngle specification) {
-        List<EntityPlane> result = new ArrayList<>();
+        List<EntityPlane> result;
         result = planeList;
         Collections.sort(result, specification);
         return result;

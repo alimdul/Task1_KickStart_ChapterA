@@ -1,6 +1,6 @@
-package by.pivovarevich.task1.identifierCounter;
+package by.pivovarevich.task1.util;
 
-public class CountIdentifier {
+public class IdGenerator {
 
     private static long planeId = 1;
 

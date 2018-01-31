@@ -11,17 +11,17 @@ public class CreateListOfParameters {
     private Double angle;
     private boolean perpendicularity;
 
-    private FindAngleBetweenPlanes findAngleBetweenPlanes;
-    private CheckForPerpendicularityOfPlaneToCoordinateAxis checkForPerpendicularityOfPlaneToCoordinateAxis;
+    private FindAngleBetweenPlanes findAngle;
+    private CheckForPerpendicularityOfPlaneToCoordinateAxis checkForPerpendicularity;
 
     public ParametersOfPlane<Double, Boolean> findParameters(EntityPlane plane) throws IncorrectInputParametersException {
 
-        findAngleBetweenPlanes = new FindAngleBetweenPlanes();
-        checkForPerpendicularityOfPlaneToCoordinateAxis = new CheckForPerpendicularityOfPlaneToCoordinateAxis();
+        findAngle = new FindAngleBetweenPlanes();
+        checkForPerpendicularity = new CheckForPerpendicularityOfPlaneToCoordinateAxis();
         parametersOfPlane = new ParametersOfPlane<>();
 
-        angle = findAngleBetweenPlanes.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
-        perpendicularity = checkForPerpendicularityOfPlaneToCoordinateAxis.isPlanePerpendicularToCoordinateAxisOx(plane);
+        angle = findAngle.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
+        perpendicularity = checkForPerpendicularity.isPlanePerpendicularToCoordinateAxisOx(plane);
 
         parametersOfPlane.setFirstParameter(angle);
         parametersOfPlane.setSecondParameter(perpendicularity);

@@ -42,10 +42,6 @@ public class CheckForThreePointsFormPlane {
     }
 
     private boolean isPointsAllDifferent(EntityPoint point1, EntityPoint point2, EntityPoint point3) {
-
-        if(!(point1.equals(point2) || point1.equals(point3) || point2.equals(point3))) {
-            return true;
-        }
-        return false;
+        return !(point1.equals(point2) || point1.equals(point3) || point2.equals(point3));
     }
 }

@@ -23,7 +23,7 @@ public class PlaneSpecificationSortByAngle implements Comparator<EntityPlane> {
             angleOfPlane1 = findAngle.findAngleBetweenPlaneAndCoordinatePlaneYOZ(o1);
             angleOfPlane2 = findAngle.findAngleBetweenPlaneAndCoordinatePlaneYOZ(o2);
         } catch (IncorrectInputParametersException e) {
-            LOGGER.log(Level.ERROR, "- Sorting can not be performed!");
+            LOGGER.log(Level.ERROR, "- Sorting can not be performed!", e);
         }
         if(angleOfPlane1 > angleOfPlane2) {
             return 1;

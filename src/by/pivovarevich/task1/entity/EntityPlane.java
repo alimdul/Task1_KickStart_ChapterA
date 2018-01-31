@@ -5,11 +5,10 @@ import java.util.Observable;
 
 public class EntityPlane extends Observable {
 
+    private long id;
     private EntityPoint point1;
     private EntityPoint point2;
     private EntityPoint point3;
-
-    private long id;
 
     public EntityPlane(EntityPoint point1, EntityPoint point2, EntityPoint point3) {
         this.point1 = point1;

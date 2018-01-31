@@ -20,7 +20,7 @@ public class PlaneHolder {
         return planeHolder = (planeHolder == null) ? new PlaneHolder() : planeHolder;
     }
 
-    public void addPlane(EntityPlane plane) throws IncorrectInputParametersException {
+    public void add(EntityPlane plane) throws IncorrectInputParametersException {
         createListOfParameters = new CreateListOfParameters();
         parametersOfPlane = createListOfParameters.findParameters(plane);
         parametersOfPlaneMap.put(plane.getId(), parametersOfPlane);

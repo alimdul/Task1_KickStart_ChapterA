@@ -44,7 +44,7 @@ public class BigTest {
             }
 //            System.out.println(planeList = planeRepository.query(new PlaneSpecificationByPerpendicularity()));
 //            System.out.println(planeList = planeRepository.query(new PlaneSpecificationByRangeOfAngle()));
-//            System.out.println(planeList = planeRepository.sort(new PlaneSpecificationSortByAngle()));
+            System.out.println(planeList = planeRepository.sort(new PlaneSpecificationSortByAngle()));
 
 //            System.out.println("-----------------------------");
 //            planeHolder.printPlaneMap();
