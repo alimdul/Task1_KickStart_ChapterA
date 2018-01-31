@@ -1,7 +1,7 @@
 package by.pivovarevich.task1.observer;
 
 import by.pivovarevich.task1.entity.EntityPlane;
-import by.pivovarevich.task1.entity.PlaneHolderSingleton;
+import by.pivovarevich.task1.entity.PlaneHolder;
 import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -15,7 +15,7 @@ public class PlaneObserver implements Observer {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private EntityPlane plane;
-    private PlaneHolderSingleton planeHolderSingleton = PlaneHolderSingleton.getPlaneHolderSingleton();
+    private PlaneHolder planeHolder = PlaneHolder.getPlaneHolder();
 
     public PlaneObserver(EntityPlane plane) {
         this.plane = plane;
@@ -25,7 +25,7 @@ public class PlaneObserver implements Observer {
     public void update(Observable o, Object arg) {
         if (o == plane) {
             try {
-                planeHolderSingleton.changeParameters(plane);
+                planeHolder.changeParameters(plane);
             } catch (IncorrectInputParametersException e) {
                 LOGGER.log(Level.ERROR, "- Parameters of plane " + plane.toString() + " are not changed!");
             }

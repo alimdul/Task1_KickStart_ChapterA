@@ -6,30 +6,30 @@ import by.pivovarevich.task1.parametersOfPlane.ParametersOfPlane;
 
 import java.util.*;
 
-public class PlaneHolderSingleton {
+public class PlaneHolder {
 
-    private static PlaneHolderSingleton planeHolderSingleton;
+    private static PlaneHolder planeHolder;
     private Map<Long, ParametersOfPlane<Double, Boolean>> parametersOfPlaneMap = new HashMap<>();
-    private Map<Long, EntityPlane> planeMap = new HashMap<>();
 
     private CreateListOfParameters createListOfParameters;
     private ParametersOfPlane<Double, Boolean> parametersOfPlane;
 
-    private PlaneHolderSingleton(){}
+    private PlaneHolder(){}
 
-    public static PlaneHolderSingleton getPlaneHolderSingleton() {
-        return planeHolderSingleton = (planeHolderSingleton == null) ? new PlaneHolderSingleton() : planeHolderSingleton;
+    public static PlaneHolder getPlaneHolder() {
+        return planeHolder = (planeHolder == null) ? new PlaneHolder() : planeHolder;
     }
 
     public void addPlane(EntityPlane plane) throws IncorrectInputParametersException {
         createListOfParameters = new CreateListOfParameters();
         parametersOfPlane = createListOfParameters.findParameters(plane);
         parametersOfPlaneMap.put(plane.getId(), parametersOfPlane);
-        planeMap.put(plane.getId(), plane);
     }
 
-    public EntityPlane getPlane(long id) {
-        return planeMap.get(id);
+    public void changeParameters(EntityPlane plane) throws IncorrectInputParametersException {
+        createListOfParameters = new CreateListOfParameters();
+        parametersOfPlane = createListOfParameters.findParameters(plane);
+        parametersOfPlaneMap.replace(plane.getId(), parametersOfPlane);
     }
 
     public void printPlaneMap() {
@@ -37,12 +37,6 @@ public class PlaneHolderSingleton {
             System.out.println(id+ ": angle = " + parametersOfPlaneMap.get(id).getFirstParameter() + ", perpendicularity = " +
                     parametersOfPlaneMap.get(id).getSecondParameter());
         }
-    }
-
-    public void changeParameters(EntityPlane plane) throws IncorrectInputParametersException {
-        createListOfParameters = new CreateListOfParameters();
-        parametersOfPlane = createListOfParameters.findParameters(plane);
-        parametersOfPlaneMap.replace(plane.getId(), parametersOfPlane);
     }
 
 }
