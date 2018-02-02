@@ -18,12 +18,8 @@ public class ReadFromFileTest {
         File file = new File(fileName);
 
         int expectedStringsCount = 3;
-        int stringsCount;
-
-        ReadFromFile readFromFile = new ReadFromFile();
-
         try {
-            stringsCount = readFromFile.readData(file).size();
+            int stringsCount = new ReadFromFile().readData(file).size();
             Assert.assertEquals(stringsCount, expectedStringsCount);
         } catch (IncorrectInputFileException e) {
             Assert.fail("Unexpected fail!");
@@ -38,12 +34,8 @@ public class ReadFromFileTest {
 
         List<String> expectedStrings = Arrays.asList("1.0 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0", "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0",
                 "1.0  1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0");
-
-        ReadFromFile readFromFile = new ReadFromFile();
-        List<String> strings;
-
         try {
-            strings = readFromFile.readData(file);
+            List<String> strings = new ReadFromFile().readData(file);
             Assert.assertEquals(strings, expectedStrings);
         } catch (IncorrectInputFileException e) {
             Assert.fail("Unexpected fail!");
@@ -54,9 +46,7 @@ public class ReadFromFileTest {
     public void readFromFileIsNullExceptionTest() throws IncorrectInputFileException {
 
         File file = null;
-
-        ReadFromFile readFromFile = new ReadFromFile();
-        readFromFile.readData(file);
+        new ReadFromFile().readData(file);
     }
 
     @Test(expectedExceptions = IncorrectInputFileException.class)
@@ -64,9 +54,7 @@ public class ReadFromFileTest {
 
         String FILE = "data/wrongFile.txt";
         File file = new File(FILE);
-
-        ReadFromFile readFromFile = new ReadFromFile();
-        readFromFile.readData(file);
+        new ReadFromFile().readData(file);
     }
 
     @Test(expectedExceptions = IncorrectInputFileException.class)
@@ -74,9 +62,6 @@ public class ReadFromFileTest {
 
         String FILE = "data/empty.txt";
         File file = new File(FILE);
-
-        ReadFromFile readFromFile = new ReadFromFile();
-        readFromFile.readData(file);
+        new ReadFromFile().readData(file);
     }
-
 }

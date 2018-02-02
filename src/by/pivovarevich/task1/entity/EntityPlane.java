@@ -5,7 +5,7 @@ import java.util.Observable;
 
 public class EntityPlane extends Observable {
 
-    private long id;
+    private long planeId;
     private EntityPoint point1;
     private EntityPoint point2;
     private EntityPoint point3;
@@ -28,8 +28,8 @@ public class EntityPlane extends Observable {
         return point3;
     }
 
-    public long getId() {
-        return id;
+    public long getPlaneId() {
+        return planeId;
     }
 
     public void setPoint1(EntityPoint point) {
@@ -50,8 +50,8 @@ public class EntityPlane extends Observable {
         notifyObservers();
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setPlaneId(long planeId) {
+        this.planeId = planeId;
     }
 
     @Override

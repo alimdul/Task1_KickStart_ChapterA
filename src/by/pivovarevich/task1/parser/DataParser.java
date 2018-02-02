@@ -12,12 +12,13 @@ public class DataParser {
 
     private static final String DOUBLE_NUMBER = "[-]?\\d+\\.\\d+";
 
-    private List<Double> coordinatesString;
-
     public List<Double> parseString (String string) throws IncorrectInputParametersException {
 
-        InputParameterValidation.nullParameter(string);
-        coordinatesString = new ArrayList<>();
+        if (InputParameterValidation.nullParameter(string)) {
+            throw new IncorrectInputParametersException("Incorrect input parameters!");
+        }
+
+        List<Double> coordinatesString = new ArrayList<>();
 
         Pattern p = Pattern.compile(DOUBLE_NUMBER);
         Matcher m = p.matcher(string);

@@ -13,9 +13,7 @@ public class CheckForPerpendicularityOfPlaneToCoordinateAxisTest {
     public void checkForPerpendicularityOfPlaneToCoordinateAxisExceptionTest() throws IncorrectInputParametersException {
 
         EntityPlane plane = null;
-
-        CheckForPerpendicularityOfPlaneToCoordinateAxis perpendicularPlaneToTheCoordinateAxis = new CheckForPerpendicularityOfPlaneToCoordinateAxis();
-        perpendicularPlaneToTheCoordinateAxis.isPlanePerpendicularToCoordinateAxisOx(plane);
+        new CheckForPerpendicularityOfPlaneToCoordinateAxis().isPlanePerpendicularToCoordinateAxisOx(plane);
     }
 
     @Test
@@ -26,12 +24,10 @@ public class CheckForPerpendicularityOfPlaneToCoordinateAxisTest {
         EntityPoint point1 = new EntityPoint(1.0, 0.0, -2.0);
         EntityPoint point2 = new EntityPoint(1.0, 0.0, 3.0);
         EntityPoint point3 = new EntityPoint(0.0, 0.0, 1.0);
-
         EntityPlane plane = new EntityPlane(point1, point2, point3);
 
-        CheckForPerpendicularityOfPlaneToCoordinateAxis perpendicularPlaneToTheCoordinateAxis = new CheckForPerpendicularityOfPlaneToCoordinateAxis();
         try {
-            isPerpendicular = perpendicularPlaneToTheCoordinateAxis.isPlanePerpendicularToCoordinateAxisOx(plane);
+            isPerpendicular = new CheckForPerpendicularityOfPlaneToCoordinateAxis().isPlanePerpendicularToCoordinateAxisOx(plane);
             Assert.assertEquals(isPerpendicular, false);
         } catch (IncorrectInputParametersException e) {
             Assert.fail("Unexpected fail!");
@@ -46,12 +42,10 @@ public class CheckForPerpendicularityOfPlaneToCoordinateAxisTest {
         EntityPoint point1 = new EntityPoint(0.0, 1.0, 0.0);
         EntityPoint point2 = new EntityPoint(0.0, 1.0, 3.0);
         EntityPoint point3 = new EntityPoint(0.0, -2.0, 1.0);
-
         EntityPlane plane = new EntityPlane(point1, point2, point3);
 
-        CheckForPerpendicularityOfPlaneToCoordinateAxis perpendicularPlaneToTheCoordinateAxis = new CheckForPerpendicularityOfPlaneToCoordinateAxis();
         try {
-            isPerpendicular = perpendicularPlaneToTheCoordinateAxis.isPlanePerpendicularToCoordinateAxisOx(plane);
+            isPerpendicular = new CheckForPerpendicularityOfPlaneToCoordinateAxis().isPlanePerpendicularToCoordinateAxisOx(plane);
             Assert.assertEquals(isPerpendicular, true);
         } catch (IncorrectInputParametersException e) {
             Assert.fail("Unexpected fail!");

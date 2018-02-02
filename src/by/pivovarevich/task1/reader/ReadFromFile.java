@@ -17,21 +17,17 @@ public class ReadFromFile {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private List<String> readStringsList;
-
     public List<String> readData(File file) throws IncorrectInputFileException {
 
         if(file == null || !file.exists() || file.length()==0) {
             throw new IncorrectInputFileException("Incorrect input parameters");
         }
 
-        readStringsList = new ArrayList<>();
+        List<String> readStringsList = new ArrayList<>();
         try {
-            Files.lines(Paths.get(file.getPath()), StandardCharsets.UTF_8).forEach((String currentString) -> {
-                readStringsList.add(currentString);
-            });
+            Files.lines(Paths.get(file.getPath()), StandardCharsets.UTF_8).forEach(readStringsList::add);
         } catch (IOException e) {
-            LOGGER.log(Level.FATAL, "- Fatal error! File not found.");
+            LOGGER.catching(Level.FATAL, e);
             throw new RuntimeException(e);
         }
         LOGGER.log(Level.INFO, "- Data is successfully read. List contains " + readStringsList.size() + " strings");

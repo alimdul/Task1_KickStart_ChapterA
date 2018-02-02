@@ -13,9 +13,7 @@ public class FindAngleBetweenPlanesTest {
     public void findAngleBetweenPlanesExceptionTest() throws IncorrectInputParametersException {
 
         EntityPlane plane = null;
-
-        FindAngleBetweenPlanes findingAngleBetweenPlanes = new FindAngleBetweenPlanes();
-        findingAngleBetweenPlanes.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
+        new FindAngleBetweenPlanes().findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
     }
 
     @Test
@@ -26,13 +24,11 @@ public class FindAngleBetweenPlanesTest {
         EntityPoint point1 = new EntityPoint(0.0, 0.0, 0.0);
         EntityPoint point2 = new EntityPoint(1.0, 2.0, 3.0);
         EntityPoint point3 = new EntityPoint(-3.0, -2.0, -1.0);
-
         EntityPlane plane = new EntityPlane(point1, point2, point3);
 
-        FindAngleBetweenPlanes findingAngleBetweenPlanes = new FindAngleBetweenPlanes();
         try {
-            angle = findingAngleBetweenPlanes.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
-            Assert.assertEquals(angle, 23.0);
+            angle = new FindAngleBetweenPlanes().findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane);
+            Assert.assertEquals(angle, 23.3909);
         } catch (IncorrectInputParametersException e) {
             Assert.fail("Unexpected fail!");
         }

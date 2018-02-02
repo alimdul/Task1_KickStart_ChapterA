@@ -1,7 +1,9 @@
-package by.pivovarevich.task1.planeRepository;
+package by.pivovarevich.task1.repository;
 
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.exception.IncorrectInputParametersException;
+import by.pivovarevich.task1.repository.specification.PlaneSpecification;
+import by.pivovarevich.task1.repository.specification.PlaneSpecificationSortByAngle;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,7 +24,7 @@ public class PlaneRepository {
         planeList.add(entityPlane);
     }
 
-    public List<EntityPlane> query(PlaneSpecificationImpl specification) throws IncorrectInputParametersException {
+    public List<EntityPlane> query(PlaneSpecification specification) throws IncorrectInputParametersException {
         List<EntityPlane> result = new ArrayList<>();
         for(EntityPlane plane: planeList) {
             if(specification.specified(plane)) {

@@ -3,7 +3,7 @@ package by.pivovarevich.task1.creator;
 import by.pivovarevich.task1.entity.PlaneHolder;
 import by.pivovarevich.task1.util.IdGenerator;
 import by.pivovarevich.task1.observer.PlaneObserver;
-import by.pivovarevich.task1.planeRepository.PlaneRepository;
+import by.pivovarevich.task1.repository.PlaneRepository;
 import by.pivovarevich.task1.validation.CheckForThreePointsFormPlane;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
@@ -19,46 +19,30 @@ public class PlaneCreator {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private CheckForThreePointsFormPlane checkForThreePointsFormPlane = new CheckForThreePointsFormPlane();
-    private EntityPlane newPlane;
-    private PlaneObserver planeObserver;
-    private EntityPoint point1;
-    private EntityPoint point2;
-    private EntityPoint point3;
-
     public enum Coordinate {
-        X1(0), Y1(1), Z1(2), X2(3), Y2(4), Z2(5), X3(6), Y3(7), Z3(8);
-
-        private int coordinatePosition;
-
-        Coordinate(int coordinatePosition) {
-            this.coordinatePosition = coordinatePosition;
-        }
-
-        public int getCoordinatePosition() {
-            return coordinatePosition;
-        }
+        X1, Y1, Z1, X2, Y2, Z2, X3, Y3, Z3
     }
 
     public EntityPlane createPlane(List<Double> coordinatesString) throws IncorrectInputParametersException {
 
-        InputParameterValidation.nullParameter(coordinatesString);
+        if (InputParameterValidation.nullParameter(coordinatesString)) {
+            throw new IncorrectInputParametersException("Incorrect input parameters!");
+        }
 
-        point1 = new EntityPoint(coordinatesString.get(Coordinate.X1.getCoordinatePosition()),
-                    coordinatesString.get(Coordinate.Y1.getCoordinatePosition()),
-                    coordinatesString.get(Coordinate.Z1.getCoordinatePosition()));
-        point2 = new EntityPoint(coordinatesString.get(Coordinate.X2.getCoordinatePosition()),
-                coordinatesString.get(Coordinate.Y2.getCoordinatePosition()),
-                coordinatesString.get(Coordinate.Z2.getCoordinatePosition()));
-        point3 = new EntityPoint(coordinatesString.get(Coordinate.X3.getCoordinatePosition()),
-                coordinatesString.get(Coordinate.Y3.getCoordinatePosition()),
-                coordinatesString.get(Coordinate.Z3.getCoordinatePosition()));
+        EntityPoint point1 = new EntityPoint(coordinatesString.get(Coordinate.X1.ordinal()),
+                    coordinatesString.get(Coordinate.Y1.ordinal()),
+                    coordinatesString.get(Coordinate.Z1.ordinal()));
+        EntityPoint point2 = new EntityPoint(coordinatesString.get(Coordinate.X2.ordinal()),
+                coordinatesString.get(Coordinate.Y2.ordinal()),
+                coordinatesString.get(Coordinate.Z2.ordinal()));
+        EntityPoint point3 = new EntityPoint(coordinatesString.get(Coordinate.X3.ordinal()),
+                coordinatesString.get(Coordinate.Y3.ordinal()),
+                coordinatesString.get(Coordinate.Z3.ordinal()));
 
-        if(checkForThreePointsFormPlane.pointsFormPlane(point1, point2, point3)) {
-            newPlane = new EntityPlane(point1, point2, point3);
-            planeObserver = new PlaneObserver(newPlane);
-            newPlane.setId(IdGenerator.countPlaneIdentifier());
-            newPlane.addObserver(planeObserver);
+        if(new CheckForThreePointsFormPlane().pointsFormPlane(point1, point2, point3)) {
+            EntityPlane newPlane = new EntityPlane(point1, point2, point3);
+            newPlane.setPlaneId(IdGenerator.countPlaneIdentifier());
+            newPlane.addObserver(new PlaneObserver());
             PlaneHolder.getPlaneHolder().add(newPlane);
             PlaneRepository.getPlaneRepository().add(newPlane);
             return newPlane;

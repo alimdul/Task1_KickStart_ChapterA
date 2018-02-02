@@ -14,20 +14,12 @@ public class PlaneObserver implements Observer {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private EntityPlane plane;
-
-    public PlaneObserver(EntityPlane plane) {
-        this.plane = plane;
-    }
-
     @Override
     public void update(Observable o, Object arg) {
-        if (o == plane) {
-            try {
-                PlaneHolder.getPlaneHolder().changeParameters(plane);
-            } catch (IncorrectInputParametersException e) {
-                LOGGER.log(Level.ERROR, "- Parameters of plane " + plane.toString() + " are not changed!", e);
-            }
+        try {
+            PlaneHolder.getPlaneHolder().changeParameters((EntityPlane) o);
+        } catch (IncorrectInputParametersException e) {
+            LOGGER.catching(Level.ERROR, e);
         }
     }
 }

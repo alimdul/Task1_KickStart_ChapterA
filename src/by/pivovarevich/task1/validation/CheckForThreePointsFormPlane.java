@@ -7,7 +7,9 @@ public class CheckForThreePointsFormPlane {
 
     public boolean pointsFormPlane(EntityPoint point1, EntityPoint point2, EntityPoint point3) throws IncorrectInputParametersException {
 
-        InputParameterValidation.nullParameter(point1, point2, point3);
+        if (InputParameterValidation.nullParameter(point1, point2, point3)) {
+            throw new IncorrectInputParametersException("Incorrect input parameters!");
+        }
 
         if(isPointsAllDifferent(point1, point2, point3)) {
             if(isPointsOnLine(point1, point2, point3)) {
@@ -22,7 +24,9 @@ public class CheckForThreePointsFormPlane {
 
     public boolean isPointsOnLine(EntityPoint point1, EntityPoint point2, EntityPoint point3) throws IncorrectInputParametersException {
 
-        InputParameterValidation.nullParameter(point1, point2, point3);
+        if (InputParameterValidation.nullParameter(point1, point2, point3)) {
+            throw new IncorrectInputParametersException("Incorrect input parameters!");
+        }
 
         if((point1.getX()==0 || point1.getY()==0 || point1.getZ()==0) &&
                 point2.getX()-point1.getX()==point3.getX()-point1.getX() &&

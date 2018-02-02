@@ -10,9 +10,7 @@ public class ValidationOnDataTest {
     public void validationOnDataPositiveTest() {
 
         String string = "1.0 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0";
-
-        ValidationOnData validationOnData = new ValidationOnData();
-        boolean isValid = validationOnData.validation(string);
+        boolean isValid = new ValidationOnData().validation(string);
 
         Assert.assertEquals(isValid, true);
     }
@@ -21,11 +19,8 @@ public class ValidationOnDataTest {
     public void validationOnDataNegativeTest() {
 
         String string = "1. 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0";
-
-        ValidationOnData validationOnData = new ValidationOnData();
-        boolean isValid = validationOnData.validation(string);
+        boolean isValid = new ValidationOnData().validation(string);
 
         Assert.assertEquals(isValid, false);
     }
-
 }

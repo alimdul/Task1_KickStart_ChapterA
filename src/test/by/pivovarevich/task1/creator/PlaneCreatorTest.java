@@ -3,6 +3,7 @@ package test.by.pivovarevich.task1.creator;
 import by.pivovarevich.task1.creator.PlaneCreator;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
+import by.pivovarevich.task1.entity.PlaneHolder;
 import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -21,10 +22,8 @@ public class PlaneCreatorTest {
         EntityPlane expectedPlane = new EntityPlane(point1, point2, point3);
 
         List<Double> coordinatesList = Arrays.asList(0.0, 1.0, 0.0, 0.0, 1.0, 3.0, 0.0, -2.0, 1.0);
-        PlaneCreator planeCreator = new PlaneCreator();
-
         try {
-            EntityPlane plane = planeCreator.createPlane(coordinatesList);
+            EntityPlane plane = new PlaneCreator().createPlane(coordinatesList);
             Assert.assertEquals(plane, expectedPlane);
         } catch (IncorrectInputParametersException e) {
             Assert.fail("Unexpected fail!");
@@ -35,16 +34,14 @@ public class PlaneCreatorTest {
     public void planeCreatorNullParameterExceptionTest() throws IncorrectInputParametersException {
 
         List<Double> coordinatesList = null;
-        PlaneCreator planeCreator = new PlaneCreator();
-        planeCreator.createPlane(coordinatesList);
+        new PlaneCreator().createPlane(coordinatesList);
     }
 
     @Test(expectedExceptions = IncorrectInputParametersException.class)
     public void planeCreatorWrongCoordinatesCountExceptionTest() throws IncorrectInputParametersException {
 
         List<Double> coordinatesList = Arrays.asList(1.0, 3.0, 3.0, 1.0, 3.0, 3.0, 3.0);
-        PlaneCreator planeCreator = new PlaneCreator();
-        planeCreator.createPlane(coordinatesList);
+        new PlaneCreator().createPlane(coordinatesList);
     }
 
 }

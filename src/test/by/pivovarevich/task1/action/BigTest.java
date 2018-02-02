@@ -1,15 +1,12 @@
 package test.by.pivovarevich.task1.action;
 import by.pivovarevich.task1.creator.PlaneCreator;
 import by.pivovarevich.task1.entity.EntityPlane;
-import by.pivovarevich.task1.entity.EntityPoint;
 import by.pivovarevich.task1.entity.PlaneHolder;
 import by.pivovarevich.task1.exception.IncorrectInputFileException;
 import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import by.pivovarevich.task1.parser.DataParser;
-import by.pivovarevich.task1.planeRepository.PlaneRepository;
-import by.pivovarevich.task1.planeRepository.PlaneSpecificationByPerpendicularity;
-import by.pivovarevich.task1.planeRepository.PlaneSpecificationByRangeOfAngle;
-import by.pivovarevich.task1.planeRepository.PlaneSpecificationSortByAngle;
+import by.pivovarevich.task1.repository.PlaneRepository;
+import by.pivovarevich.task1.repository.specification.PlaneSpecificationByPerpendicularity;
 import by.pivovarevich.task1.reader.ReadFromFile;
 import by.pivovarevich.task1.validation.ValidationOnData;
 
@@ -42,9 +39,9 @@ public class BigTest {
                     planeCreator.createPlane(coordinatesList);
                 }
             }
-//            System.out.println(planeList = planeRepository.query(new PlaneSpecificationByPerpendicularity()));
+            System.out.println(planeList = planeRepository.query(new PlaneSpecificationByPerpendicularity()));
 //            System.out.println(planeList = planeRepository.query(new PlaneSpecificationByRangeOfAngle()));
-            System.out.println(planeList = planeRepository.sort(new PlaneSpecificationSortByAngle()));
+            //System.out.println(planeList = planeRepository.sort(new PlaneSpecificationSortByAngle()));
 
 //            System.out.println("-----------------------------");
 //            planeHolder.printPlaneMap();
