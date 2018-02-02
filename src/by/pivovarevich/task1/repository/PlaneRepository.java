@@ -24,6 +24,10 @@ public class PlaneRepository {
         planeList.add(entityPlane);
     }
 
+    public int size() {
+        return planeList.size();
+    }
+
     public List<EntityPlane> query(PlaneSpecification specification) throws IncorrectInputParametersException {
         List<EntityPlane> result = new ArrayList<>();
         for(EntityPlane plane: planeList) {

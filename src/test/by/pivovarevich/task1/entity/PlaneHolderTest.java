@@ -1,6 +1,5 @@
 package test.by.pivovarevich.task1.entity;
 
-import by.pivovarevich.task1.creator.PlaneCreator;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
 import by.pivovarevich.task1.entity.PlaneHolder;
@@ -11,7 +10,7 @@ import org.testng.annotations.Test;
 public class PlaneHolderTest {
 
     @Test
-    public void PlaneHolderAddPositiveTest() {
+    public void PlaneHolderAddTest() {
 
         int expectedSize = PlaneHolder.getPlaneHolder().size() + 1;
 
@@ -27,11 +26,5 @@ public class PlaneHolderTest {
         } catch (IncorrectInputParametersException e) {
             Assert.fail("Unexpected fail!");
         }
-    }
-
-    @Test
-    public void PlaneHolderChangeParametersPositiveTest() {
-
-
     }
 }

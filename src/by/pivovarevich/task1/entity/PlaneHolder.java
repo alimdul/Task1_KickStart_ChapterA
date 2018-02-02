@@ -17,6 +17,14 @@ public class PlaneHolder {
         return planeHolder = (planeHolder == null) ? new PlaneHolder() : planeHolder;
     }
 
+    public Map<Long, ParametersOfPlane<Double, Boolean>> getParametersOfPlaneMap() {
+        return parametersOfPlaneMap;
+    }
+
+    public int size() {
+        return parametersOfPlaneMap.size();
+    }
+
     public void add(EntityPlane plane) throws IncorrectInputParametersException {
         ParametersOfPlane<Double, Boolean> parametersOfPlane = new CreateListOfParameters().findParameters(plane);
         parametersOfPlaneMap.put(plane.getPlaneId(), parametersOfPlane);
@@ -33,9 +41,4 @@ public class PlaneHolder {
                     parametersOfPlaneMap.get(planeId).getSecond());
         }
     }
-
-    public int size() {
-        return parametersOfPlaneMap.size();
-    }
-
 }
