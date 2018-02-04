@@ -39,13 +39,16 @@ public class PlaneCreator {
                 coordinatesString.get(Coordinate.Y3.ordinal()),
                 coordinatesString.get(Coordinate.Z3.ordinal()));
 
-        if(new CheckForThreePointsFormPlane().pointsFormPlane(point1, point2, point3)) {
+        if(new CheckForThreePointsFormPlane().isPlane(point1, point2, point3)) {
             EntityPlane newPlane = new EntityPlane(point1, point2, point3);
-            newPlane.setPlaneId(IdGenerator.countPlaneIdentifier());
-            newPlane.addObserver(new PlaneObserver());
-            PlaneHolder.getPlaneHolder().add(newPlane);
-            PlaneRepository.getPlaneRepository().add(newPlane);
-            return newPlane;
+            if(!PlaneRepository.getPlaneRepository().planeExist(newPlane)) {
+                newPlane.setPlaneId(IdGenerator.countPlaneIdentifier());
+                newPlane.addObserver(new PlaneObserver());
+                PlaneHolder.getPlaneHolder().add(newPlane);
+                PlaneRepository.getPlaneRepository().add(newPlane);
+                return newPlane;
+            }
+            return null;
         }
         else {
             LOGGER.log(Level.WARN, "- These points: " + point1.toString() + point2.toString() + point3.toString() +

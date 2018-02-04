@@ -5,7 +5,7 @@ import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 
 public class CheckForThreePointsFormPlane {
 
-    public boolean pointsFormPlane(EntityPoint point1, EntityPoint point2, EntityPoint point3) throws IncorrectInputParametersException {
+    public boolean isPlane(EntityPoint point1, EntityPoint point2, EntityPoint point3) throws IncorrectInputParametersException {
 
         if (InputParameterValidation.nullParameter(point1, point2, point3)) {
             throw new IncorrectInputParametersException("Incorrect input parameters!");

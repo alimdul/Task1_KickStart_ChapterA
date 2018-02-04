@@ -28,11 +28,4 @@ public class CreateListOfParametersTest {
             Assert.fail("Unexpected fail!");
         }
     }
-
-    @Test(expectedExceptions = IncorrectInputParametersException.class)
-    public void createListOfParametersExceptionTest() throws IncorrectInputParametersException {
-
-        EntityPlane plane = null;
-        new CreateListOfParameters().findParameters(plane);
-    }
 }

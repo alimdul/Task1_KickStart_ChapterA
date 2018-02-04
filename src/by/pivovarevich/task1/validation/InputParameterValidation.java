@@ -1,6 +1,5 @@
 package by.pivovarevich.task1.validation;
 
-import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
 
 import java.util.List;
@@ -8,10 +7,6 @@ import java.util.List;
 public class InputParameterValidation {
 
     private static final int NUMBER_OF_COORDINATES = 9;
-
-    public static boolean nullParameter(EntityPlane plane) {
-        return plane == null;
-    }
 
     public static boolean nullParameter(List<Double> list) {
         return list == null || list.size() != NUMBER_OF_COORDINATES;

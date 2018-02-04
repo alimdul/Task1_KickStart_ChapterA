@@ -2,7 +2,6 @@ package by.pivovarevich.task1.repository.specification;
 
 import by.pivovarevich.task1.action.FindAngleBetweenPlanes;
 import by.pivovarevich.task1.entity.EntityPlane;
-import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 
 public class PlaneSpecificationByRangeOfAngle implements PlaneSpecification {
 
@@ -10,7 +9,7 @@ public class PlaneSpecificationByRangeOfAngle implements PlaneSpecification {
     private static final double MAX_ANGLE = 45.;
 
     @Override
-    public boolean specified(EntityPlane plane) throws IncorrectInputParametersException {
+    public boolean specified(EntityPlane plane) {
         FindAngleBetweenPlanes findAngle = new FindAngleBetweenPlanes();
         return (Double.compare(findAngle.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane), MIN_ANGLE) == 1 ||
                         Double.compare(findAngle.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane), MIN_ANGLE) == 0) &&

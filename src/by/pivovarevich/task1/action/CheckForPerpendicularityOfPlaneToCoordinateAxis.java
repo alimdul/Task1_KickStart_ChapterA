@@ -1,10 +1,6 @@
 package by.pivovarevich.task1.action;
 
 import by.pivovarevich.task1.entity.EntityPlane;
-import by.pivovarevich.task1.exception.IncorrectInputParametersException;
-import by.pivovarevich.task1.validation.InputParameterValidation;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class CheckForPerpendicularityOfPlaneToCoordinateAxis {
@@ -13,11 +9,7 @@ public class CheckForPerpendicularityOfPlaneToCoordinateAxis {
     private static final int NUMBER_COEFFICIENT_B = 1;
     private static final int NUMBER_COEFFICIENT_C = 2;
 
-    public boolean isPlanePerpendicularToCoordinateAxisOx(EntityPlane plane) throws IncorrectInputParametersException {
-
-        if(InputParameterValidation.nullParameter(plane)) {
-            throw new IncorrectInputParametersException("Incorrect input parameters!");
-        }
+    public boolean isPlanePerpendicularToCoordinateAxisOx(EntityPlane plane) {
 
         List<Double> coefficientList = new FindAngleBetweenPlanes().findCoefficients(plane);
         double coefficientA = coefficientList.get(NUMBER_COEFFICIENT_A);

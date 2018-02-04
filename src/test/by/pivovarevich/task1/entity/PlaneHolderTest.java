@@ -3,7 +3,6 @@ package test.by.pivovarevich.task1.entity;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
 import by.pivovarevich.task1.entity.PlaneHolder;
-import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,12 +18,8 @@ public class PlaneHolderTest {
         EntityPoint point3 = new EntityPoint(0.0, 0.0, 1.0);
         EntityPlane plane = new EntityPlane(point1, point2, point3);
 
-        try {
-            PlaneHolder.getPlaneHolder().add(plane);
-            int size = PlaneHolder.getPlaneHolder().size();
-            Assert.assertEquals(size, expectedSize);
-        } catch (IncorrectInputParametersException e) {
-            Assert.fail("Unexpected fail!");
-        }
+        PlaneHolder.getPlaneHolder().add(plane);
+        int size = PlaneHolder.getPlaneHolder().size();
+        Assert.assertEquals(size, expectedSize);
     }
 }

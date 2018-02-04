@@ -1,6 +1,5 @@
 package by.pivovarevich.task1.entity;
 
-import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import by.pivovarevich.task1.parameter.CreateListOfParameters;
 import by.pivovarevich.task1.parameter.ParametersOfPlane;
 
@@ -25,12 +24,12 @@ public class PlaneHolder {
         return parametersOfPlaneMap.size();
     }
 
-    public void add(EntityPlane plane) throws IncorrectInputParametersException {
+    public void add(EntityPlane plane) {
         ParametersOfPlane<Double, Boolean> parametersOfPlane = new CreateListOfParameters().findParameters(plane);
         parametersOfPlaneMap.put(plane.getPlaneId(), parametersOfPlane);
     }
 
-    public void changeParameters(EntityPlane plane) throws IncorrectInputParametersException {
+    public void changeParameters(EntityPlane plane) {
         ParametersOfPlane<Double, Boolean> parametersOfPlane = new CreateListOfParameters().findParameters(plane);
         parametersOfPlaneMap.replace(plane.getPlaneId(), parametersOfPlane);
     }

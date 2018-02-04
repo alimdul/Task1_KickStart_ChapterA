@@ -1,8 +1,6 @@
 package by.pivovarevich.task1.action;
 
 import by.pivovarevich.task1.entity.EntityPlane;
-import by.pivovarevich.task1.exception.IncorrectInputParametersException;
-import by.pivovarevich.task1.validation.InputParameterValidation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +15,7 @@ public class FindAngleBetweenPlanes {
     private static final double COEFFICIENT_B2 = 0;
     private static final double COEFFICIENT_C2 = 0;
 
-    public List<Double> findCoefficients(EntityPlane plane) throws IncorrectInputParametersException {
-
-        if (InputParameterValidation.nullParameter(plane)) {
-            throw new IncorrectInputParametersException("Incorrect input parameters!");
-        }
+    public List<Double> findCoefficients(EntityPlane plane) {
 
         List<Double> coefficientList = new ArrayList<>();
 
@@ -55,11 +49,7 @@ public class FindAngleBetweenPlanes {
         return coefficientList;
     }
 
-    public double findAngleBetweenPlaneAndCoordinatePlaneYOZ(EntityPlane plane) throws IncorrectInputParametersException {
-
-        if (InputParameterValidation.nullParameter(plane)) {
-            throw new IncorrectInputParametersException("Incorrect input parameters!");
-        }
+    public double findAngleBetweenPlaneAndCoordinatePlaneYOZ(EntityPlane plane) {
 
         List<Double> coefficientList = new FindAngleBetweenPlanes().findCoefficients(plane);
         double coefficientA1 = coefficientList.get(NUMBER_COEFFICIENT_A1);

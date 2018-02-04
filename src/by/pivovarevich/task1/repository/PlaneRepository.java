@@ -1,12 +1,11 @@
 package by.pivovarevich.task1.repository;
 
+import by.pivovarevich.task1.action.FindAngleBetweenPlanes;
 import by.pivovarevich.task1.entity.EntityPlane;
-import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import by.pivovarevich.task1.repository.specification.PlaneSpecification;
-import by.pivovarevich.task1.repository.specification.PlaneSpecificationSortByAngle;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class PlaneRepository {
@@ -28,7 +27,16 @@ public class PlaneRepository {
         return planeList.size();
     }
 
-    public List<EntityPlane> query(PlaneSpecification specification) throws IncorrectInputParametersException {
+    public boolean planeExist(EntityPlane newPlane) {
+        for(EntityPlane plane: planeList) {
+            if(newPlane.equals(plane)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public List<EntityPlane> query(PlaneSpecification specification) {
         List<EntityPlane> result = new ArrayList<>();
         for(EntityPlane plane: planeList) {
             if(specification.specified(plane)) {
@@ -38,11 +46,13 @@ public class PlaneRepository {
         return result;
     }
 
-    public List<EntityPlane> sort(PlaneSpecificationSortByAngle specification) {
+    public List<EntityPlane> sortByAngle() {
+
+        FindAngleBetweenPlanes findAngle = new FindAngleBetweenPlanes();
         List<EntityPlane> result;
         result = planeList;
-        Collections.sort(result, specification);
+        result.sort(Comparator.comparingDouble(plane -> findAngle.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane)));
+
         return result;
     }
-
 }

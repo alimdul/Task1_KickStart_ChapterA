@@ -3,7 +3,6 @@ package test.by.pivovarevich.task1.creator;
 import by.pivovarevich.task1.creator.PlaneCreator;
 import by.pivovarevich.task1.entity.EntityPlane;
 import by.pivovarevich.task1.entity.EntityPoint;
-import by.pivovarevich.task1.entity.PlaneHolder;
 import by.pivovarevich.task1.exception.IncorrectInputParametersException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -43,5 +42,4 @@ public class PlaneCreatorTest {
         List<Double> coordinatesList = Arrays.asList(1.0, 3.0, 3.0, 1.0, 3.0, 3.0, 3.0);
         new PlaneCreator().createPlane(coordinatesList);
     }
-
 }

@@ -10,7 +10,6 @@ import by.pivovarevich.task1.reader.ReadFromFile;
 import by.pivovarevich.task1.repository.PlaneRepository;
 import by.pivovarevich.task1.repository.specification.PlaneSpecificationByPerpendicularity;
 import by.pivovarevich.task1.repository.specification.PlaneSpecificationByRangeOfAngle;
-import by.pivovarevich.task1.repository.specification.PlaneSpecificationSortByAngle;
 import by.pivovarevich.task1.validation.ValidationOnData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -96,7 +95,7 @@ public class PlaneRepositoryTest {
         try {
             List<String> strings = new ReadFromFile().readData(file);
             createAllPlanes(strings);
-            List<EntityPlane> planeList = PlaneRepository.getPlaneRepository().sort(new PlaneSpecificationSortByAngle());
+            List<EntityPlane> planeList = PlaneRepository.getPlaneRepository().sortByAngle();
             for (EntityPlane plane: planeList) {
                 list.add(plane.toString());
             }
