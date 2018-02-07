@@ -17,7 +17,7 @@ public class ReadFromFileTest {
         String fileName = "data/data.txt";
         File file = new File(fileName);
 
-        int expectedStringsCount = 3;
+        int expectedStringsCount = 5;
         try {
             int stringsCount = new ReadFromFile().readData(file).size();
             Assert.assertEquals(stringsCount, expectedStringsCount);
@@ -32,8 +32,9 @@ public class ReadFromFileTest {
         String fileName = "data/data.txt";
         File file = new File(fileName);
 
-        List<String> expectedStrings = Arrays.asList("1.0 1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0", "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0",
-                "1.0  1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0");
+        List<String> expectedStrings = Arrays.asList("0.0 1.0 0.0 0.0 1.0 3.0 0.0 -2.0 1.0", "0.0 0.0 0.0 1.0 2.0 3.0 -3.0 -2.0 -1.0",
+                "0.0 1.0 0.0 0.0 1.0 3.0 0.0 -2.0 1.0", "1.0  1.0 1.0 2.0 2.0 2.0 3.0 3.0 3.0",
+                "1.0 1.0 1.z0 2.0 2.0 2.0 3.0 3.0 3.0");
         try {
             List<String> strings = new ReadFromFile().readData(file);
             Assert.assertEquals(strings, expectedStrings);

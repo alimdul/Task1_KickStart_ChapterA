@@ -19,7 +19,7 @@ public class ObserverTest {
         List<String> expectedParameters = Arrays.asList("46.473", "false");
 
         List<Double> coordinatesList1 = Arrays.asList(0.0, 1.0, 0.0, 0.0, 1.0, 3.0, 0.0, -2.0, 1.0);
-        List<Double> coordinatesList2 = Arrays.asList(0.0, 1.0, 0.0, 0.0, 1.0, 3.0, 0.0, -2.0, 1.0);
+        List<Double> coordinatesList2 = Arrays.asList(1.0, 1.0, 2.0, 0.0, 1.0, 3.0, 0.0, -2.0, 1.0);
         EntityPoint newPoint = new EntityPoint(-2.0, -1.0, 5.0);
 
         try {

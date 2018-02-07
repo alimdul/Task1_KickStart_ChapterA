@@ -12,6 +12,7 @@ import by.pivovarevich.task1.repository.specification.PlaneSpecificationByPerpen
 import by.pivovarevich.task1.repository.specification.PlaneSpecificationByRangeOfAngle;
 import by.pivovarevich.task1.validation.ValidationOnData;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -20,6 +21,32 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PlaneRepositoryTest {
+
+    @BeforeClass
+    public void createAllPlanes() throws IncorrectInputFileException {
+
+        String fileName = "data/data.txt";
+        File file = new File(fileName);
+        List<String> strings = new ReadFromFile().readData(file);
+
+        String currentString;
+        ValidationOnData validationOnData = new ValidationOnData();
+        DataParser dataParser = new DataParser();
+        PlaneCreator planeCreator = new PlaneCreator();
+        List<Double> coordinatesList;
+
+        for(int i=0; i<strings.size(); i++) {
+            currentString = strings.get(i);
+            if(validationOnData.validation(currentString)) {
+                try {
+                    coordinatesList = dataParser.parseString(currentString);
+                    planeCreator.createPlane(coordinatesList);
+                } catch (IncorrectInputParametersException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
     @Test
     public void planeRepositoryAddTest() {
@@ -39,85 +66,40 @@ public class PlaneRepositoryTest {
     @Test
     public void planeRepositoryQueryPerpendicularityTest() {
 
-        String fileName = "data/data.txt";
-        File file = new File(fileName);
-
-        List<String> expectedList = Arrays.asList("((x=0.0, y=1.0, z=0.0), (x=0.0, y=1.0, z=3.0), (x=0.0, y=-2.0, z=1.0))",
-                "((x=0.0, y=1.0, z=0.0), (x=0.0, y=1.0, z=3.0), (x=0.0, y=-2.0, z=1.0))");
+        List<String> expectedList = Arrays.asList("((x=0.0, y=1.0, z=0.0), (x=0.0, y=1.0, z=3.0), (x=0.0, y=-2.0, z=1.0))");
         List<String> list = new ArrayList<>();
 
-        try {
-            List<String> strings = new ReadFromFile().readData(file);
-            createAllPlanes(strings);
-            List<EntityPlane> planeList = PlaneRepository.getPlaneRepository().query(new PlaneSpecificationByPerpendicularity());
-            for (EntityPlane plane: planeList) {
-                list.add(plane.toString());
-            }
-            Assert.assertEquals(list, expectedList);
-        } catch (IncorrectInputFileException | IncorrectInputParametersException e) {
-            Assert.fail("Unexpected fail!");
+        List<EntityPlane> planeList = PlaneRepository.getPlaneRepository().query(new PlaneSpecificationByPerpendicularity());
+        for (EntityPlane plane: planeList) {
+            list.add(plane.toString());
         }
+        Assert.assertEquals(list, expectedList);
     }
 
     @Test
     public void planeRepositoryQueryRangeOfAngleTest() {
 
-        String fileName = "data/data.txt";
-        File file = new File(fileName);
-
         List<String> expectedList = Arrays.asList("((x=0.0, y=0.0, z=0.0), (x=1.0, y=2.0, z=3.0), (x=-3.0, y=-2.0, z=-1.0))");
         List<String> list = new ArrayList<>();
 
-        try {
-            List<String> strings = new ReadFromFile().readData(file);
-            createAllPlanes(strings);
-            List<EntityPlane> planeList = PlaneRepository.getPlaneRepository().query(new PlaneSpecificationByRangeOfAngle());
-            for (EntityPlane plane: planeList) {
-                list.add(plane.toString());
-            }
-            Assert.assertEquals(list, expectedList);
-        } catch (IncorrectInputFileException | IncorrectInputParametersException e) {
-            Assert.fail("Unexpected fail!");
+        List<EntityPlane> planeList = PlaneRepository.getPlaneRepository().query(new PlaneSpecificationByRangeOfAngle());
+        for (EntityPlane plane: planeList) {
+            list.add(plane.toString());
         }
+        Assert.assertEquals(list, expectedList);
     }
 
     @Test
     public void planeRepositorySortByAngleTest() {
 
-        String fileName = "data/data.txt";
-        File file = new File(fileName);
-
         List<String> expectedList = Arrays.asList("((x=0.0, y=0.0, z=0.0), (x=1.0, y=2.0, z=3.0), (x=-3.0, y=-2.0, z=-1.0))",
-                "((x=0.0, y=1.0, z=0.0), (x=0.0, y=1.0, z=3.0), (x=0.0, y=-2.0, z=1.0))",
                 "((x=0.0, y=1.0, z=0.0), (x=0.0, y=1.0, z=3.0), (x=0.0, y=-2.0, z=1.0))");
         List<String> list = new ArrayList<>();
 
-        try {
-            List<String> strings = new ReadFromFile().readData(file);
-            createAllPlanes(strings);
-            List<EntityPlane> planeList = PlaneRepository.getPlaneRepository().sortByAngle();
-            for (EntityPlane plane: planeList) {
-                list.add(plane.toString());
-            }
-            Assert.assertEquals(list, expectedList);
-        } catch (IncorrectInputFileException | IncorrectInputParametersException e) {
-            Assert.fail("Unexpected fail!");
+        List<EntityPlane> planeList = PlaneRepository.getPlaneRepository().sortByAngle();
+        for (EntityPlane plane: planeList) {
+            list.add(plane.toString());
         }
-    }
-
-    public void createAllPlanes(List<String> strings) throws IncorrectInputParametersException {
-        String currentString;
-        ValidationOnData validationOnData = new ValidationOnData();
-        DataParser dataParser = new DataParser();
-        PlaneCreator planeCreator = new PlaneCreator();
-        List<Double> coordinatesList;
-
-        for(int i=0; i<strings.size(); i++) {
-            currentString = strings.get(i);
-            if(validationOnData.validation(currentString)) {
-                coordinatesList = dataParser.parseString(currentString);
-                planeCreator.createPlane(coordinatesList);
-            }
-        }
+        Assert.assertEquals(list, expectedList);
     }
 }

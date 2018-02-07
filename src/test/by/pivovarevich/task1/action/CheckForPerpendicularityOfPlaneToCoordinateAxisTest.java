@@ -31,5 +31,4 @@ public class CheckForPerpendicularityOfPlaneToCoordinateAxisTest {
         boolean isPerpendicular = new CheckForPerpendicularityOfPlaneToCoordinateAxis().isPlanePerpendicularToCoordinateAxisOx(plane);
         Assert.assertEquals(isPerpendicular, true);
     }
-
 }

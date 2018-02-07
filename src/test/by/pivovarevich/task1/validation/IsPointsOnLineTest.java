@@ -47,5 +47,4 @@ public class IsPointsOnLineTest {
 
         new CheckForThreePointsFormPlane().isPointsOnLine(point1, point2, point3);
     }
-
 }

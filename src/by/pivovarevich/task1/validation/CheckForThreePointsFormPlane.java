@@ -11,15 +11,11 @@ public class CheckForThreePointsFormPlane {
             throw new IncorrectInputParametersException("Incorrect input parameters!");
         }
 
+        boolean flag = false;
         if(isPointsAllDifferent(point1, point2, point3)) {
-            if(isPointsOnLine(point1, point2, point3)) {
-                return false;
-            }
-            else {
-                return true;
-            }
+            flag = !isPointsOnLine(point1, point2, point3);
         }
-        return false;
+        return flag;
     }
 
     public boolean isPointsOnLine(EntityPoint point1, EntityPoint point2, EntityPoint point3) throws IncorrectInputParametersException {

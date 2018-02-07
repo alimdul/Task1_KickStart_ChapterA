@@ -16,9 +16,6 @@ public class CheckForPerpendicularityOfPlaneToCoordinateAxis {
         double coefficientB = coefficientList.get(NUMBER_COEFFICIENT_B);
         double coefficientC = coefficientList.get(NUMBER_COEFFICIENT_C);
 
-        if(coefficientA != 0 && coefficientB == 0 && coefficientC == 0) {
-            return true;
-        }
-        return false;
+        return coefficientA != 0 && coefficientB == 0 && coefficientC == 0;
     }
 }
