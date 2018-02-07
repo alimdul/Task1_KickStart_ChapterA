@@ -49,8 +49,7 @@ public class PlaneRepository {
     public List<EntityPlane> sortByAngle() {
 
         FindAngleBetweenPlanes findAngle = new FindAngleBetweenPlanes();
-        List<EntityPlane> result;
-        result = planeList;
+        List<EntityPlane> result = new ArrayList<>(planeList);
         result.sort(Comparator.comparingDouble(plane -> findAngle.findAngleBetweenPlaneAndCoordinatePlaneYOZ(plane)));
 
         return result;
